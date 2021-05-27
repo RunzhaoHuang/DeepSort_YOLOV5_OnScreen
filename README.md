@@ -47,47 +47,46 @@ The original tracking can be run on most video formats, but I created a new one 
 
 
 ```bash
-tracking_on_screen(trajectory).py
+python tracking_on_screen(trajectory).py
 ```
 #### Parameter Interpretation
 
 
---weights: \
-Path of the model you want to deploy. You can also train your YOLOV5 model and apply it here. Default is 'yolov5/weights/yolov5s.pt'
+--weights:  yolov5/weights/yolov5s.pt \
+Path of the model you want to deploy. 
 
---config-deepsort: \
-A yaml file path that contains all the deepsort setup. Default is "deep_sort_pytorch/configs/deep_sort.yaml"
+--config-deepsort: deep_sort_pytorch/configs/deep_sort.yaml \
+A yaml file path that contains all the deepsort setup.
 
 --Record: \
 By default, the tracking and detecting results would not be saved into a text file as a format of continuous numpy arrays.
 
---record-path: \
-Path for the result text file. Default is 'inference/output'
+--record-path: inference/output \
+Path for the result text file.
 
---record-name: \
-Result text file name. Default is 'tracking_record.txt'
+--record-name: tracking_record.txt
 
 --device: \
-Cuda device, gpu 0 or 1, 2, 3. Or if you are running without cuda, you should set it to cpu
+Cuda device, gpu 0 or 1, 2, 3. Or if you are running without cuda, you should set it to cpu.
 
 --conf-thres: \
-Object confidence threshold
+Object confidence threshold.
 
 --iou-thres: \
-IOU threshold for NMS
+IOU threshold for NMS.
 
---classes
-Choose the corresponding class id that you want to track in you model. Default is 0.
+--classes: [0] \
+Choose the corresponding class id that you want to track in you model.
 
 The following 4 parameters defines the region in your computer monitor.\
---region-x1: Default is 0. \
---region-y1: Default is 175. \
---region-x2: Default is 928.\
---region-y2: Default is 687.
+--region-x1: 0 \
+--region-y1: 175 \
+--region-x2: 928 \
+--region-y2: 687
 
-The following 2 parameters defines how you want to resize the images for processing. For the constriction of resize-width and resize-height, you should also need to check the 11-23-2020 report for instruction. \
---resize-width: Default is 928.\
---resize-height: Default is 512.
+The following 2 parameters defines how you want to resize the images for processing. For the constriction of resize-width and resize-height, you should also need to check the *11-23-2020 report* for instruction. \
+--resize-width: 928 \
+--resize-height: 512
 
 
 
